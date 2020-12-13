@@ -1,0 +1,19 @@
+{
+  "name": "ui-mala",
+  "version": "1.0.0",
+  "description": "A frontend library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cschlay/UI-mala.git"
+  },
+  "author": "Chi-Hao Lay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cschlay/UI-mala/issues"
+  },
+  "homepage": "https://github.com/cschlay/UI-mala#readme"
+}

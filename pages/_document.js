@@ -10,9 +10,7 @@ class CustomDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>UImala - Code Swim</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

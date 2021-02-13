@@ -4,12 +4,12 @@ import styles from "./Menu.module.scss";
 
 const Menu = () => {
   return (
-    <div className={styles.Menu}>
+    <nav className={styles.Menu}>
       <Logo />
-      <nav>
+      <div>
         <Button href="/login">Sign In</Button>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

@@ -1,5 +1,7 @@
+@import "../styles/colors";
+
 .Menu {
-  background-color: gray;
+  background-color: $light-accent;
   width: 100%;
   display: flex;
   justify-content: space-between;

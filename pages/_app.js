@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "../styles/global.scss";
 
 /**
  * Wraps each page inside.

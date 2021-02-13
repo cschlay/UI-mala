@@ -1,0 +1,15 @@
+@import "../styles/colors";
+
+.Logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: $dark-shades;
+
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+
+
+  span {
+    color: $brand-color;
+  }
+}

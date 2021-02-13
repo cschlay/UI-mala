@@ -6,7 +6,7 @@
       "jsx": true
     }
   },
-  "ignorePatterns": ["*.test.js", "*config*"],
+  "ignorePatterns": ["*.test.js", "*.spec.js", "*config*"],
   "plugins": ["fp", "jsdoc"],
   "rules": {
     "semi": ["error", "always"],

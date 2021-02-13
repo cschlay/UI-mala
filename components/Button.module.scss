@@ -1,20 +1,23 @@
 @import "../styles/colors";
 
-.Link {
+.Button {
   border: 1px solid black;
   border-radius: 0.25rem;
 
-  background-color: $dark-shades;
-  color: $light-shades;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   padding: 0.25rem 1rem;
-  text-decoration: none;
+  background-color: $dark-shades;
+  color: $light-shades;
 }
 
-.Link:hover {
+.Button:hover {
+  cursor: pointer;
   opacity: 0.9;
 }
 
-.Button {
-
+a.Button {
+  text-decoration: none;
 }

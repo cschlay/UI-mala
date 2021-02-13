@@ -5,4 +5,15 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  max-height: 10vh;
+
+  a {
+    padding: 0.25rem 1rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+  }
 }

@@ -1,10 +1,13 @@
 import styles from "./Logo.module.scss";
+import Link from "next/link";
 
 const Logo = () => {
   return (
-    <a href="/" className={styles.Logo}>
-      <span>UI</span>mala
-    </a>
+    <Link href="/">
+      <a className={styles.Logo}>
+        <span>UI</span>mala
+      </a>
+    </Link>
   );
 };
 

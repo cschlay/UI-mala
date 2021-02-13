@@ -1,6 +1,6 @@
 ## UI-mala
 
-![Unit Tests](https://github.com/cschlay/UI-mala/workflows/Node.js%20CI/badge.svg?branch=main)
+![Unit Tests](https://github.com/cschlay/UI-mala/workflows/Unit%20Tests/badge.svg)
 
 A swimming hall application that everything is overly optimized and enterprise quality.
 

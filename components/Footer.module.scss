@@ -1,0 +1,12 @@
+@import "../styles/colors";
+
+.Footer {
+  background-color: $dark-shades;
+  color: $light-shades;
+  padding: 1rem 1rem;
+  min-height: 5vh;
+  p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+}

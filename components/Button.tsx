@@ -1,14 +1,14 @@
 import Link from "next/link";
 import styles from "./Button.module.scss";
 
-interface Button {
+interface ButtonProps {
   children: JSX.Element;
   href?: string;
   onClick?: () => void;
-  type: "button" | "submit" | "reset";
+  type?: "button" | "submit" | "reset";
 }
 
-const Button = ({ children, type = "button", href, onClick }: Button) => {
+const Button = ({ children, type = "button", href, onClick }: ButtonProps) => {
   if (href) {
     return (
       <Link href={href}>

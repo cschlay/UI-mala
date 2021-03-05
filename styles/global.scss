@@ -1,6 +1,14 @@
 @import "./colors";
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
 
+:root {
+  --light-shades: #F2F2F2;
+  --light-accent: #BDC1BB;
+  --brand-color: #92382e;
+  --dark-accent: #928786;
+  --dark-shades: #261F25;
+}
+
 body {
   margin: 0;
 

@@ -1,7 +1,7 @@
 import fetch from "isomorphic-unfetch";
 import * as queryString from "querystring";
-// @ts-ignore
 import Cookies from "js-cookie";
+import { AUTH_TOKEN_NAME } from "../../settings";
 
 interface RequestOptions {
   nextCtx?: object;
@@ -10,12 +10,21 @@ interface RequestOptions {
 
 const getApiUrl = (url: string, params?: {}): string => {
   const paramString: string = params ? `?${queryString.stringify(params)}` : "";
-  return process.env.API_HOST + url + paramString;
+  return process.env.NEXT_PUBLIC_API_HOST + url + paramString;
 };
 
-const getAuthorizationHeader = (nextCtx?: object): string => {
-  // TODO: Implement nextCtx cookie extraction.
-  return Cookies.get("authorization");
+const getHeaders = (nextCtx?: object): object => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  const authToken = Cookies.get(AUTH_TOKEN_NAME);
+  if (authToken) {
+    return {
+      ...headers,
+      Authorization: `Bearer ${authToken}`,
+    };
+  }
+  return headers;
 };
 
 const httpGet = async (
@@ -24,15 +33,31 @@ const httpGet = async (
   { nextCtx, headers, ...options }: RequestOptions = {}
 ): Promise<object> => {
   const apiUrl: string = getApiUrl(url, queryParams);
-  console.info(`HTTP GET ${apiUrl}`);
   return fetch(apiUrl, {
     method: "GET",
     headers: {
-      "Content-Type": "application/json",
-      Authorization: getAuthorizationHeader(nextCtx),
+      ...getHeaders(nextCtx),
       ...headers,
     },
     ...options,
+  })
+    .catch(handleRequestError)
+    .then(handleResponse);
+};
+
+const httpPost = async (
+  url: string,
+  data: object,
+  { nextCtx, headers, ...options }: RequestOptions = {}
+) => {
+  const apiUrl: string = getApiUrl(url);
+  return fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      ...getHeaders(nextCtx),
+      ...headers,
+    },
+    body: JSON.stringify(data),
   })
     .catch(handleRequestError)
     .then(handleResponse);
@@ -61,6 +86,7 @@ const handleResponse = async (response: Response): Promise<object> => {
 
 const requests = {
   get: httpGet,
+  post: httpPost,
 };
 
 export { getApiUrl, requests };

@@ -1,3 +1,5 @@
+import { apiUrls } from "../app/urls";
+import { requests } from "../app/utilities/requests";
 import { Button } from "../components/Button";
 import { Form } from "../components/Form";
 import { useForm } from "../components/hooks/useForm";
@@ -18,6 +20,12 @@ const LoginPage = () => {
     console.info("Login data submitted.");
 
     return true;
+  };
+
+  const handleLoginGitHub = () => {
+    requests.get(apiUrls.githubOAuth).then((data) => {
+      window.open(data.url, "_self");
+    });
   };
 
   return (

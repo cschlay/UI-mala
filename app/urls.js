@@ -6,6 +6,7 @@
 
 const apiUrls = {
   login: "/login",
+  githubOAuth: "/github-login",
 };
 
 const urls = {

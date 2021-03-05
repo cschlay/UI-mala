@@ -11,8 +11,10 @@ global.tlib = testlib;
 
 // eslint-disable-next-line fp/no-nil
 beforeAll(() => {
+  // Environment variables
+  process.env.NEXT_PUBLIC_API_HOST = "http://localhost:8000";
+
   // eslint-disable-next-line fp/no-mutation
-  process.env.API_HOST = "http://localhost:8000";
   mockServer.listen();
 
   resetTestUser();

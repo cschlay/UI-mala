@@ -1,16 +1,19 @@
 import { Form } from "./Form";
 
 describe("<Form />", () => {
-  it("it should prevent default submit and default", () => {
+  it("submit data given", () => {
     const mockHandleSubmit = jest.fn();
     tlib.render(
-      <Form onSubmit={mockHandleSubmit}>
+      <Form
+        onSubmit={mockHandleSubmit}
+        form={{ data: { name: "Fried potato" } }}
+      >
         <button>Submit</button>
       </Form>
     );
 
     const submitButton = tlib.screen.getByRole("button", { name: "Submit" });
     submitButton.click();
-    expect(mockHandleSubmit).toBeCalled();
+    expect(mockHandleSubmit).toBeCalledWith({ name: "Fried potato" });
   });
 });

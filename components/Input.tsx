@@ -1,5 +1,6 @@
 import styles from "./Input.module.scss";
 import { ChangeEvent, useEffect, useState } from "react";
+import { getClass } from "../app/utilities/getClass";
 
 interface Input {
   label?: string;
@@ -12,21 +13,31 @@ interface Input {
   name: string;
 }
 
-const Input = ({ form, label, name, ...otherProps }: Input): JSX.Element => {
+const Input = ({
+  form,
+  label,
+  name,
+  required = true,
+  ...otherProps
+}: Input): JSX.Element => {
   const [inputId, setInputId] = useState("");
 
   useEffect(() => {
-    setInputId(`input_${form.id}_${name}`);
+    setInputId(`form__${form.id}-${name}`);
   }, [form.id, name]);
 
+  console.log(form.errors[name], styles.error);
   return (
-    <div className={styles.Container}>
+    <div
+      className={getClass(styles.Container, form.errors[name] && styles.error)}
+    >
       {label && <label htmlFor={inputId}>{label}</label>}
       <input
-        id={form.id}
+        id={inputId}
         name={name}
         value={form.data[name]}
         onChange={form.handleChange}
+        required={required}
         {...otherProps}
       />
       {form.errors[name] && (

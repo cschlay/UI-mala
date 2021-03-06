@@ -5,6 +5,7 @@ interface useForm {
   data: any;
   errors: { [key: string]: [string] };
   setErrors: (data: any) => void;
+  setNonFieldErrors: (errorList: any[]) => void;
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   reset: () => void;
 }
@@ -36,11 +37,16 @@ const useForm = ({
     });
   };
 
+  const setNonFieldErrors = (errorList: any[]) => {
+    setErrors({ ...errors, nonFieldError: errorList });
+  };
+
   return {
     id,
     data,
     errors,
     setErrors,
+    setNonFieldErrors,
     handleChange,
     reset: () => {
       setData(initialData);

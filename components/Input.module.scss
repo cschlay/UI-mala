@@ -1,4 +1,15 @@
+@import "../styles/constants";
+
 .Container {
   display: flex;
   flex-direction: column;
+
+  input[type="text"], input[type="password"] {
+    border-radius: $default-border-radius;
+    padding: $default-padding-vertical;
+  }
+}
+
+.error {
+  color: $error-color;
 }

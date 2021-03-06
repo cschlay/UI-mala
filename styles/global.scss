@@ -1,22 +1,18 @@
-@import "./colors";
-@import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
-
-:root {
-  --light-shades: #F2F2F2;
-  --light-accent: #BDC1BB;
-  --brand-color: #92382e;
-  --dark-accent: #928786;
-  --dark-shades: #261F25;
-}
+@import "constants";
 
 body {
   margin: 0;
 
   background-color: $light-shades;
   color: $dark-shades;
-  font-family: 'Martel Sans', sans-serif;
+  font-family: $main-font;
 }
 
 button {
   font: unset;
+}
+
+input {
+  font-family: $main-font;
+  font-size: 1rem;
 }

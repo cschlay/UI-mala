@@ -1,5 +1,7 @@
+@import "../styles/constants";
+
 .Form {
-  div {
-    margin-bottom: 0.5rem;
-  }
+  display: grid;
+  grid-column-gap: $default-margin;
+  grid-row-gap: $default-margin;
 }

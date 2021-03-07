@@ -25,3 +25,18 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 import "@testing-library/cypress/add-commands";
+import { AUTH_TOKEN_NAME } from "../../settings";
+
+Cypress.Commands.add("setUp", () => {
+  cy.log("SetUp test user");
+  return cy
+    .request("http://localhost:8000/test-interface/setup")
+    .then((res) => {
+      cy.setCookie(AUTH_TOKEN_NAME, res.body.token);
+    });
+});
+
+Cypress.Commands.add("tearDown", () => {
+  cy.log("TearDown test user");
+  return cy.request("http://localhost:8000/test-interface/teardown");
+});

@@ -18,8 +18,6 @@ const login = (data: object) => {
 
 const validateLoginForm = async (data: object) => {
   let errors = {};
-  if (data.username === "") {
-  }
 
   if (Object.keys(errors).length > 0) {
     return Promise.reject(errors);

@@ -19,6 +19,10 @@ import "./commands";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-before(() => {
-  cy.log("ONCE!");
+beforeEach(() => {
+  cy.setUp();
+});
+
+afterEach(() => {
+  cy.tearDown();
 });

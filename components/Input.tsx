@@ -11,6 +11,7 @@ interface Input {
     handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   };
   name: string;
+  required: boolean;
 }
 
 const Input = ({
@@ -26,7 +27,6 @@ const Input = ({
     setInputId(`form__${form.id}-${name}`);
   }, [form.id, name]);
 
-  console.log(form.errors[name], styles.error);
   return (
     <div
       className={getClass(styles.Container, form.errors[name] && styles.error)}

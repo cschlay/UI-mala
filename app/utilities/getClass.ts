@@ -3,4 +3,5 @@
  *
  * Inspired from https://www.npmjs.com/package/classnames
  */
-export const getClass = (...args: string[]): string => args.join(" ");
+export const getClass = (...args: string[]): string =>
+  args.filter((x) => x).join(" ");

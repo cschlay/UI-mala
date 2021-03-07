@@ -7,6 +7,7 @@ interface FormProps {
   form: {
     id: string;
     data: any;
+    setErrors: (errors: any) => void;
   };
   onSubmit: (data: any) => void;
   onValidation?: (data: any) => any;
@@ -37,7 +38,7 @@ const Form = ({ children, onSubmit, onValidation, form }: FormProps) => {
       .then((validatedData: any) => {
         onSubmit(validatedData);
       })
-      .catch((errors) => {
+      .catch((errors: any) => {
         if (errors) {
           form.setErrors(errors);
         } else {

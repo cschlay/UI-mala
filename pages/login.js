@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { login, validateLoginForm } from "../app/api/login";
 import { apiUrls } from "../app/urls";
 import { requests } from "../app/utilities/requests";
-import { Button } from "../components/Button";
+import { Button } from "../components/Button/Button";
 import { Form } from "../components/Form";
 import { useForm } from "../components/hooks/useForm";
 import { Input } from "../components/Input";

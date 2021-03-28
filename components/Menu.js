@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "./Button/Button";
 import { Logo } from "./Logo";
 import styles from "./Menu.module.scss";
 

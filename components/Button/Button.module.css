@@ -1,16 +1,9 @@
-@import "../styles/constants";
-
 .Button {
   border: 1px solid black;
-  border-radius: $default-border-radius;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: $default-padding-vertical $default-padding-horizontal;
-  background-color: $dark-shades;
-  color: $light-shades;
 }
 
 .Button:hover {

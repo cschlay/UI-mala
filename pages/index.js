@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { urls } from "../app/urls";
-import { Button } from "../components/Button";
+import { Button } from "../components/Button/Button";
 import { Layout } from "../components/Layout";
 import styles from "./index.module.scss";
 

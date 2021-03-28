@@ -1,8 +1,8 @@
 import Link from "next/link";
-import styles from "./Button.module.scss";
+import styles from "./Button.module.css";
 
-interface ButtonProps {
-  children: JSX.Element;
+export interface ButtonProps {
+  children: JSX.Element | string;
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";

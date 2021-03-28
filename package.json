@@ -10,7 +10,9 @@
     "coverage": "jest --coverage",
     "test:system": "cypress run",
     "test:system:chrome": "cypress run --browser chrome",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
@@ -26,6 +28,11 @@
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-typescript": "^7.12.16",
+    "@storybook/addon-actions": "^6.2.0-rc.9",
+    "@storybook/addon-essentials": "^6.2.0-rc.9",
+    "@storybook/addon-links": "^6.2.0-rc.9",
+    "@storybook/builder-webpack5": "^6.2.0-rc.9",
+    "@storybook/react": "^6.2.0-rc.9",
     "@testing-library/cypress": "^7.0.4",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
@@ -33,6 +40,7 @@
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
     "cypress": "^6.6.0",
     "eslint": "^7.19.0",
     "eslint-plugin-fp": "^2.3.0",

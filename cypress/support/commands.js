@@ -40,3 +40,9 @@ Cypress.Commands.add("tearDown", () => {
   cy.log("TearDown test user");
   return cy.request("http://localhost:8000/test-interface/teardown");
 });
+
+Cypress.Commands.add("openComponent", (componentId) => {
+  return cy.visit(
+    `http://localhost:6006/iframe.html?id=${componentId}&viewMode=story`
+  );
+});

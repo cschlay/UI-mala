@@ -8,8 +8,8 @@
     "start": "next start",
     "test": "jest",
     "coverage": "jest --coverage",
-    "test:system": "cypress run",
-    "test:system:chrome": "cypress run --browser chrome",
+    "cypress": "cypress run",
+    "cypress:chrome": "cypress run --browser chrome",
     "cypress:open": "cypress open",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

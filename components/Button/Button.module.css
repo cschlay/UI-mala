@@ -1,5 +1,8 @@
 .Button {
   border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: lightgreen;
+  padding: 0.25rem;
 
   display: flex;
   align-items: center;

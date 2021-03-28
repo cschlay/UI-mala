@@ -6,9 +6,16 @@ export interface ButtonProps {
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-const Button = ({ children, type = "button", href, onClick }: ButtonProps) => {
+const Button = ({
+  children,
+  type = "button",
+  href,
+  onClick,
+  disabled,
+}: ButtonProps) => {
   if (href) {
     return (
       <Link href={href}>
@@ -19,7 +26,12 @@ const Button = ({ children, type = "button", href, onClick }: ButtonProps) => {
     );
   }
   return (
-    <button onClick={onClick} className={styles.Button} type={type}>
+    <button
+      onClick={onClick}
+      className={styles.Button}
+      type={type}
+      disabled={disabled}
+    >
       <span>{children}</span>
     </button>
   );

@@ -1,5 +1,11 @@
 @import "constants";
 
+:root {
+
+  // Z-Indices
+  --z-confirm: 10
+}
+
 body {
   margin: 0;
 

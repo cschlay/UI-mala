@@ -1,8 +1,7 @@
 .Button {
   border: 1px solid black;
   border-radius: 0.5rem;
-  background-color: lightgreen;
-  padding: 0.25rem;
+  padding: 0.5rem 1rem;
 
   display: flex;
   align-items: center;
@@ -16,4 +15,9 @@
 
 a.Button {
   text-decoration: none;
+}
+
+.primaryColor {
+  background-color: black;
+  color: white;
 }

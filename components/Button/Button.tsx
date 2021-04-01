@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Button.module.css";
+import { getClass } from "../../app/utilities/getClass";
 
 export interface ButtonProps {
   children: JSX.Element | string;
@@ -7,6 +8,8 @@ export interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
+  // Styles
+  primary?: boolean;
 }
 
 const Button = ({
@@ -15,11 +18,12 @@ const Button = ({
   href,
   onClick,
   disabled,
+  primary,
 }: ButtonProps) => {
   if (href) {
     return (
       <Link href={href}>
-        <a className={styles.Button}>
+        <a className={getClass(styles.Button, primary && styles.primaryColor)}>
           <span>{children}</span>
         </a>
       </Link>
@@ -28,7 +32,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      className={styles.Button}
+      className={getClass(styles.Button, primary && styles.primaryColor)}
       type={type}
       disabled={disabled}
     >
